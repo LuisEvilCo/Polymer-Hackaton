@@ -1,0 +1,27 @@
+<dom-module id="poli-hola">
+<template>
+	[[greeting]]
+	<poli-log id="logger"></poli-log>
+</template>
+
+</dom-module>
+<script>
+		Polymer({
+			is : 'poli-hola',
+			properties: {
+				greeting:{
+				type: String,
+				value: "Hey"
+				}
+			},
+			getGreeting: function(){
+				return this.greeting;
+			},
+
+			ready : function () {
+				console.log("log from poli-hola");
+				this.$.logger.log(this.greeting);
+			},
+			
+		})
+</script>

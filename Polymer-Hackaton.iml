@@ -31,6 +31,16 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/bower_components/polymer/bower.json" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web/bower_components/polymer" relative="/WEB-INF" />
+        </webroots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
