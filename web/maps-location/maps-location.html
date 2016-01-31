@@ -1,8 +1,11 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
 <dom-module id="maps-location">
     <template>
-        <p>Latitude = [[latitude]]</p>
-        <p>Longitude = [[longitude]]</p>
-        <google-map latitude='[[latitude]]' longitude='[[longitude]]'></google-map>
+        <google-map latitude='[[latitude]]' longitude='[[longitude]]' zoom='[[zoom]]'>
+            <google-map-marker latitude="[[latitude]]" longitude="[[longitude]]"  draggable="[[drag]]">
+                <img src="[[img]]">
+            </google-map-marker>
+        </google-map>
     </template>
 </dom-module>
 <script>
@@ -20,7 +23,19 @@
             longitude:{
                 type: Number,
                 value: 0
-            }
+            },
+            zoom:{
+            	type: Number,
+            },
+            title:{
+                type: String,
+            },
+            img:{
+                type: String,
+            },
+            drag:{
+                type: Boolean,
+            },
         },
         ready: function(){
             if (navigator.geolocation) {
@@ -31,10 +46,8 @@
             }
         },
         setGeoPosition: function(position){
-            //console.log("latitude : " + position.coords.latitude);
             this.latitude = position.coords.latitude;
             console.log(this.latitude);
-            //console.log("longitude : " + position.coords.longitude);
             this.longitude = position.coords.longitude;
             console.log(this.longitude);
         }

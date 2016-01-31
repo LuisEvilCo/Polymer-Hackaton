@@ -3,53 +3,6 @@
   User: Luis
   Date: 30/01/2016
 -->
-<!--
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
-    <meta name="author" content="Hege Refsnes">
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="imports.html">
-    <title>Polymer Hackathon</title>
-</head>
-<body>
-    <p>index.html</p>
-    <proto-element></proto-element>
-    <poli-hola greeting="intento 3"></poli-hola>
-
-
-    <style>
-        google-map {
-            width: 1000px;
-            height: 500px;
-        }
-    </style>
-
-    <template is="dom-bind">
-        <google-map-search map="[[map]]" query="Pizza" results="{{results}}">
-        </google-map-search>
-        <google-map map="{{map}}" latitude="37.779"
-                    longitude="-122.3892">
-            <template is="dom-repeat" items="{{results}}" as="marker">
-                <google-map-marker latitude="{{marker.latitude}}"
-                                   longitude="{{marker.longitude}}">
-                    <h2>{{marker.name}}</h2>
-                    <span>{{marker.formatted_address}}</span>
-                </google-map-marker>
-            </template>
-        </google-map>
-    </template>
-
-</body>
-</html>
-
--->
-
-<!doctype html>
-
-
 <html lang="en">
 
 <head>
@@ -86,7 +39,7 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild-->
+    <!-- endbuild -->
 
     <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
@@ -160,13 +113,11 @@
                 <iron-pages attr-for-selected="data-route" selected="{{route}}">
                     <section data-route="home">
                         <paper-material elevation="1">
-                            <!--<my-greeting></my-greeting> --> <!-- Welcome + some functionality -->
+                            <!--<my-greeting></my-greeting> &ndash;&gt; &lt;!&ndash; Welcome + some functionality -->
 
                             <p class="subhead">You now have:</p>
                             <!-- doing work -->
-                            <maps-location>
-                            </maps-location>
-
+                            <gmaps-localization></gmaps-localization>
                             <style>
                                 google-map {
                                     min-height: 300px;
@@ -176,8 +127,12 @@
                                     margin: 16px auto;
                                 }
                             </style>
-                            <!--<google-map latitude="37.77493" longitude="-122.41942"></google-map>-->
 
+                            <maps-location zoom="15" img="image.jpg" drag="true">
+                            </maps-location>
+
+
+                            <!--<polymer-info></polymer-info>-->
 
                             <!--<my-list></my-list>--> <!-- just a list -->
 
@@ -223,7 +178,7 @@
 
 <!-- build:js scripts/app.js -->
 <script src="scripts/app.js"></script>
-<!-- endbuild-->
+<!-- endbuild -->
 </body>
 
 </html>
